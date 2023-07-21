@@ -1,10 +1,13 @@
 import React from 'react'
+import Navbar from '../Navbar/Navbar'
 
 type Props = {}
 
 const Header = (props: Props) => {
   return (
-    <div>header</div>
+    <div style={{textAlign:"center"}}>
+      <Navbar/>
+    </div>
   )
 }
 

@@ -3,7 +3,7 @@ import { history } from '../index'
 // import jwt_decode from "jwt-decode";
 
 //setup hằng số
-export const DOMAIN = 'https://shop.cyberlearn.vn';
+export const DOMAIN = 'https://fiverrnew.cybersoft.edu.vn';
 export const TOKEN = 'accessToken';
 export const USER_LOGIN = 'userLogin';
 export const TOKEN_CYBERSOFT = `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5Mb3AiOiJCb290Y2FtcCA0NSIsIkhldEhhblN0cmluZyI6IjA4LzEyLzIwMjMiLCJIZXRIYW5UaW1lIjoiMTcwMTk5MzYwMDAwMCIsIm5iZiI6MTY3MjA3NDAwMCwiZXhwIjoxNzAyMTQxMjAwfQ.1MKFgiR_REeXZ8RKBhPFQLyitVek8kDJ3u1JPaCB1MU`

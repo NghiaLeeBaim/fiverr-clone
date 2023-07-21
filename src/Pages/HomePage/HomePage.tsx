@@ -4,7 +4,7 @@ type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <div>index</div>
+    <div className='container '>index</div>
   )
 }
 
