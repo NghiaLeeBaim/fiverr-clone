@@ -1,10 +1,14 @@
 .navbar {
   background-color: #fafafa;
+  width: 100%;
+  position: fixed;
   .content {
     margin: 19px auto;
+    max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .logo {
       svg {
         .logo_svg {
@@ -12,23 +16,38 @@
         }
       }
     }
-    .search {
+    .search_form {
       margin-right: 5px;
       margin-left: 40px;
       text-align: start;
-      input {
-        border: 1px solid #000000 opacity($color: #000000);
-        border-radius: 4px 0px 0px 4px;
-        height: 42px;
-        width: 213px;
-      }
-      button {
-        border: none;
-        border-radius: 0px 4px 4px 0px;
-        background-color: #1bdf73;
-        color: white;
-        height: 42px;
-        width: 78px;
+      display: flex;
+      height: 42px;
+      
+      form {
+        display: flex;
+        .search {
+          border-width: 1px;
+          border-style: solid none solid solid;
+          border-color: rgb(197, 198, 201);
+          border-image: initial;
+          border-radius: 4px 0px 0px 4px;
+          outline: none;
+          padding: 10px 2px 10px 16px;
+          input {
+            background: transparent;
+            border: none;
+            color: rgb(98, 100, 106);
+            font-size: 16px;
+            outline: none;
+          }
+        }
+        button {
+          border: none;
+          border-radius: 0px 4px 4px 0px;
+          background-color: #1bdf73;
+          color: white;
+          width: 78px;
+        }
       }
     }
     .menu {

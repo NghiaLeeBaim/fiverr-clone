@@ -8,14 +8,12 @@ type Props = {}
 
 const HomeTemplates = (props: Props) => {
   return (
-    <div>
-       <Header />
-
-        <div className='content' style={{minHeight:'75vh'}}>
-            <Outlet/>
-        </div>
-        <Footer/>
-        
+    <div >
+      <Header />
+      <div className='content' style={{ minHeight: '75vh' }}>
+        <Outlet />
+      </div>
+      <Footer />
     </div>
   )
 }
