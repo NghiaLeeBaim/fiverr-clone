@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../assets/css/scss/navScss/navHomePage.scss'
+import '../../assets/css/scss/navbar/navbar.scss'
 import { NavLink } from 'react-router-dom'
 
 type Props = {}

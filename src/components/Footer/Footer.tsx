@@ -1,5 +1,5 @@
 import React from 'react'
-import "../../assets/css/scss/footerScss/footer.scss"
+import "../../assets/css/scss/footer/footer.scss"
 
 type Props = {}
 
