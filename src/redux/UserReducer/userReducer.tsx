@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { DispatchType } from '../store';
-import { USER_LOGIN, httpNonAuth, setStoreJson } from '../../util/config';
+import { TOKEN, USER_LOGIN, httpNonAuth, setStore, setStoreJson } from '../../util/config';
 import { UserLoginModel } from '../../Pages/Login/Login';
+import { history } from '../../index';
 
 
 export interface UserLogin {
@@ -23,6 +24,9 @@ const userReducer = createSlice({
     reducers: {
         loginAction: (state: UserState, action: PayloadAction<UserLogin>) => {
             state.userLogin = action.payload;
+            setStoreJson(USER_LOGIN,action.payload);
+            setStore(TOKEN,action.payload.accessToken);
+            history.push("/profile")
         }
     }
 });
@@ -33,11 +37,11 @@ export default userReducer.reducer
 
 export const loginActionApi = (userLoginForm: UserLoginModel) => {
     return async (dispatch: DispatchType) => {
-        let res = await httpNonAuth.post("/api/auth/signin",userLoginForm)
+        let res = await httpNonAuth.post("/api/auth/signin", userLoginForm)
 
-        setStoreJson(USER_LOGIN,res.data.content);
-
-        const action:PayloadAction<UserLogin>= loginAction(res.data.content);
+        setStoreJson(USER_LOGIN, res.data.content);
+        
+        const action: PayloadAction<UserLogin> = loginAction(res.data.content);
         dispatch(action)
     }
 }

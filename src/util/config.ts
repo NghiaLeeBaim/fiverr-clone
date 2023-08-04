@@ -42,7 +42,7 @@ export const httpNonAuth = axios.create({
 httpNonAuth.interceptors.request.use((config: any) => {
     config.baseURL = DOMAIN;
     config.headers = { ...config.headers }
-    config.headers.tokenCybersoft = `TOKEN_CYBERSOFT`;
+    config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
     return Promise.reject(err)
@@ -51,7 +51,7 @@ http.interceptors.request.use((config: any) => {
     config.headers = { ...config.headers }
     let token = getStoreJson(USER_LOGIN)?.accessToken;
     config.headers.Authorization = `Bearer ${token}`;
-    config.headers.tokenCybersoft = `TOKEN_CYBERSOFT`;
+    config.headers.tokenCybersoft = TOKEN_CYBERSOFT;
     return config
 }, err => {
     return Promise.reject(err)

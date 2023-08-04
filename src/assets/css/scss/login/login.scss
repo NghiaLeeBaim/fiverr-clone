@@ -45,15 +45,22 @@
           text-transform: uppercase;
           width: 110px;
           transition: all 0.5s;
-          &:hover{
+          &:hover {
             background: #1d9a5f;
             width: 214px;
             transition: 0.5s;
+          }
+        }
+        .text-register {
+          color: #1dbf73;
+          text-decoration: none;
+          transition: all 0.3s ease-in-out; 
+          &:hover {
+            transition: all 0.3s ease-in-out; 
+            text-decoration: underline;
           }
         }
       }
     }
   }
 }
-
-
