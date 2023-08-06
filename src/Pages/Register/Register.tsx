@@ -1,10 +1,36 @@
 import React from 'react'
 import '../../assets/css/scss/regitser/register.scss'
 import { NavLink } from 'react-router-dom'
+import { Formik, Form, Field, useFormik } from 'formik'
+import * as yup from 'yup'
+import { useDispatch } from 'react-redux'
+import { DispatchType } from '../../redux/store'
+import { RegisterActionApi } from '../../redux/UserReducer/userReducer'
+
+export type UserRegisterModel = {
+  email: string | null,
+  password: string | null
+}
 
 type Props = {}
 
 const Register = (props: Props) => {
+
+  const dispatch: DispatchType = useDispatch();
+
+  const frmRegister = useFormik<UserRegisterModel>({
+    initialValues: {
+      email: '',
+      password: ''
+    },
+    validationSchema: yup.object().shape({
+      
+    }),
+    onSubmit: (values: UserRegisterModel) => {
+      const actionAsync = RegisterActionApi(values);
+      dispatch(actionAsync);
+    }
+  })
   return (
     <section className='signup' id='register'>
       <div className='container_form'>
@@ -45,22 +71,22 @@ const Register = (props: Props) => {
               <div id='gender' className='gender'>
                 <i className="fa-solid fa-venus-mars fa-lg me-3 fa-fw" ></i>
                 <div className='radio gender_inp'>
-                    <input type="radio" id='male' name='gender' value="true" checked/>
-                    <label className='radio-label'>Male</label>
-                    <input type="radio" id='female' name='gender' value="false"/>
-                    <label className='radio-label'>Female</label>
+                  <input type="radio" id='male' name='gender' value="true" checked />
+                  <label className='radio-label'>Male</label>
+                  <input type="radio" id='female' name='gender' value="false" />
+                  <label className='radio-label'>Female</label>
                 </div>
               </div>
-              <div className='form-group mt-2-frm' style={{margin:"5px"}}>
-                <input type="checkbox" required name="agree-term" id="agree-term" className="agree-term"  style={{margin:"0 15px"}}/>
+              <div className='form-group mt-2-frm' style={{ margin: "5px" }}>
+                <input type="checkbox" required name="agree-term" id="agree-term" className="agree-term" style={{ margin: "0 15px" }} />
                 <label className='label-agree-term'>
                   <span>
                     <span>I agree all statements in </span>
-                  </span> 
+                  </span>
                   <a href="#" className="term-service">Terms of service</a>
                 </label>
               </div>
-              <div className='form-group form-button button-submit' style={{margin:"5px"}}>
+              <div className='form-group form-button button-submit' style={{ margin: "5px" }}>
                 <button className="btn btn-success btn_register" type="submit">Submit</button>
               </div>
             </form>
