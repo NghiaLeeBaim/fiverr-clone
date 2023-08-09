@@ -14,8 +14,8 @@ export type UserLoginModel = {
 
 type Props = {}
 
-
 const Login = (props: Props) => {
+
   const dispatch: DispatchType = useDispatch();
 
   const frmLogin = useFormik<UserLoginModel>({
@@ -24,8 +24,8 @@ const Login = (props: Props) => {
       password: ''
     },
     validationSchema: yup.object().shape({
-      email: yup.string().required('email cannot be blank').email('emailis invalid'),
-      password: yup.string().min(3, 'password must be at least 6 to 30 character').max(30, 'password must be at least 6 to 30 character')
+      email: yup.string().required('*Email không được bỏ trống ').email('*Email không đúng định dạng'),
+      password: yup.string().required('*Password không được bỏ trống').min(3, 'password must be at least 6 to 30 character').max(30, 'password must be at least 6 to 30 character')
     }),
     onSubmit: (values: UserLoginModel) => {
       const actionAsync = loginActionApi(values);
