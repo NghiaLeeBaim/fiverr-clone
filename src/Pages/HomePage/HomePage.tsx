@@ -1,12 +1,33 @@
-import React from 'react'
+
+import React, { useState } from "react";
+import "../../assets/css/scss/home_Page/home_Page.scss"
+import Slider from '../../components/Slider/Slider'
+import ReactCarousel from '../../components/ReactCarousel/ReactCarousel'
+import ReactPlayer from "react-player";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import SlickCarousel from '../../components/SlickCarousel/SlickCarousel'
+
+
 
 type Props = {}
 
 const HomePage = (props: Props) => {
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+
   return (
     <>
-      <section className="carousel-slider">
-        {/* <Slider /> */}
+      <section className="carousel-slider" >
+        <div className='carousel'>
+          <div className='carousel-inner'>
+            <Slider />
+          </div>
+        </div>
       </section>
 
       <section className="container slider-content">
@@ -49,25 +70,25 @@ const HomePage = (props: Props) => {
           <span className="trusted-by-text">Trusted by:</span>
           <ul className="d-flex trusted-by-logo align-items-center">
             <li className="li">
-              <img className="height-3 w-100" src="./img/fb.png" alt="fb" />
+              <img className="height-3 w-100" src="https://demo5.cybersoft.edu.vn/img/fb.png" alt="fb" />
             </li>
             <li className="li">
               <img
                 className="height-3 w-100"
-                src="./img/google.png"
+                src="https://demo5.cybersoft.edu.vn/img//google.png"
                 alt="google"
               />
             </li>
             <li className="li">
-              <img className="w-100" src="./img/netflix.png" alt="netflix" />
+              <img className="w-100" src="https://demo5.cybersoft.edu.vn/img/netflix.png" alt="netflix" />
             </li>
             <li className="li">
-              <img src="./img/pg.png" alt="pg" />
+              <img src="https://demo5.cybersoft.edu.vn/img/pg.png" alt="pg" />
             </li>
             <li>
               <img
                 className="height-3 w-100 paypal"
-                src="./img/paypal.png"
+                src="https://demo5.cybersoft.edu.vn/img/paypal.png"
                 alt="paypal"
               />
             </li>
@@ -76,10 +97,10 @@ const HomePage = (props: Props) => {
       </section>
 
       <section className="subcategory-carousel">
-        <div className="container">
+        <div className="container" >
           <h2>Popular professional services</h2>
           <div className="slider-package">
-            {/* <ReactCarousel /> */}
+            <ReactCarousel />
           </div>
         </div>
       </section>
@@ -205,14 +226,28 @@ const HomePage = (props: Props) => {
               </ul>
             </div>
             <div className="selling-video col-12 col-md-12 col-lg-7 col-xl-7">
-              {/* <VideoModal /> */}
+              <Button className="modal-btn" variant="none" onClick={handleShow}>
+                <img className="modal-img" src="https://demo5.cybersoft.edu.vn/img/selling.png" alt="..."></img>
+              </Button>
+
+              <Modal className="modal-show modal-lg" show={show} onHide={handleClose}>
+                <div className="video-selling">
+                  <ReactPlayer
+                    url="https://fiverr-res.cloudinary.com/video/upload/t_fiverr_hd/vmvv3czyk2ifedefkau7"
+                    width="100%"
+                    height="auto"
+                    playing={true}
+                    controls={false}
+                  />
+                </div>
+              </Modal>
             </div>
           </div>
         </div>
       </section>
 
       <section className="testimonial">
-        {/* <SlickCarousel /> */}
+        <SlickCarousel />
       </section>
 
       <section className="main-categories container">

@@ -62,7 +62,7 @@ const Register = (props: Props) => {
               </div>
               <div className='d-flex flex-row align-items-center mb-4'>
                 <i className="fa-solid fa-envelope fa-lg me-3 fa-fw"></i>
-                <input className="form-control" id="mail" name="mail" required placeholder="Your Email" onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur}></input>
+                <input className="form-control" id="email" name="email" required placeholder="Your Email" onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur}></input>
                 {frmRegister.errors.email && <div className="text-danger position-absolute" style={{ marginTop: "60px", marginLeft: "40px", fontSize: "13px", fontStyle: "italic" }}>{frmRegister.errors.email}</div>}
               </div>
               <div className='d-flex flex-row align-items-center mb-4'>
@@ -82,13 +82,12 @@ const Register = (props: Props) => {
               </div>
               <div className='d-flex flex-row align-items-center mb-4'>
                 <i className="fa-solid fa-cake-candles fa-lg me-3 fa-fw"></i>
-                <input type='date' className="form-control" id="date" name="date" required placeholder="" onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur}></input>
+                <input type='date' className="form-control" id="birthday" name="birthday" required placeholder="" onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur}></input>
                 {frmRegister.errors.birthday && <div className="text-danger position-absolute" style={{ marginTop: "60px", marginLeft: "40px", fontSize: "13px", fontStyle: "italic" }}>{frmRegister.errors.birthday}</div>}
               </div>
               <div id='gender' className='gender'>
                 <i className="fa-solid fa-venus-mars fa-lg me-3 fa-fw" ></i>
-                <div className='radio gender_inp'>
-                  <input type="radio" id='male' name='gender' value="true" checked onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur} />
+                <div className='radio gender_inp' onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur}>
                   <label className='radio-label'>Male</label>
                   <input type="radio" id='female' name='gender' value="false" onChange={frmRegister.handleChange} onBlur={frmRegister.handleBlur} />
                   <label className='radio-label'>Female</label>
@@ -113,6 +112,7 @@ const Register = (props: Props) => {
             <NavLink className="translate-login" to="/login" >I am already member</NavLink>
           </div>
         </div>
+        ma
       </div>
     </section>
   )

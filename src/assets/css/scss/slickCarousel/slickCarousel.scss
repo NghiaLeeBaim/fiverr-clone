@@ -1,0 +1,54 @@
+.slick-slider {
+  display: block;
+  position: relative;
+  .slick-arrow {
+    display: block;
+    border-radius: 50%;
+    color: rgb(255, 255, 255);
+  }
+  .slick-list {
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    display: block;
+    position: relative;
+    margin: 0 10px;
+    .slick-track {
+      .slick-slide {
+        width: 1226px;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+        > div {
+          margin: 0 10px;
+          .css-video {
+            .modal-1 {
+              display: flex !important;
+              align-items: center;
+              gap: 10px;
+              .text-block{
+                width: 60%;
+                .text{
+                    
+                    h5{
+                        border-right: 1px solid #b0b2b9;
+                        color: #b4b7c2;
+                        font-weight: 400;
+                        margin: 0!important;
+                        font-size: 1.15em;
+                        padding-right: 5px;
+                    }
+                }
+                .quote-modal{
+                    color: #003912;
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

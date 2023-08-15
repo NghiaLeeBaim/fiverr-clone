@@ -1,14 +1,18 @@
 .navbar {
-  background-color: #fafafa;
+  background: #fff;
   width: 100%;
+  z-index: 1000;
+  top:0;
   position: fixed;
+  &::backdrop{
+    background: red;
+  }
   .content {
     margin: 19px auto;
     max-width: 1400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     .logo {
       svg {
         .logo_svg {
@@ -66,11 +70,11 @@
             color: #1bdf73;
             transition: all 0.3s;
           }
-          img{
+          img {
             width: 20px;
             height: 20px;
             border-radius: 50%;
-            background: red;
+            background: transparent;
             margin-right: 5px;
           }
           button {
